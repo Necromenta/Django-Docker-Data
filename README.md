@@ -1,4 +1,4 @@
-## Features
+## Brief
 
 This project aims to create a data visualization tree for companies. our main objectives:
 - Provide a easy to understand dynamic-tree format for non-tech users
