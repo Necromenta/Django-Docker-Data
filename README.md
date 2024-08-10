@@ -1,20 +1,3 @@
-# Django + Docker = ❤️
-<div markdown="1">
-
-[![Build](https://github.com/amerkurev/django-docker-template/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/amerkurev/django-docker-template/actions/workflows/ci.yml)
-[![Coverage Status](https://coveralls.io/repos/github/amerkurev/django-docker-template/badge.svg)](https://coveralls.io/github/amerkurev/django-docker-template)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/amerkurev/django-docker-template/blob/master/LICENSE)
-</div>
-
-This simple Django project is an excellent template for your future projects. 
-It includes everything you need to quickly set up a quality technology stack and start developing your web application's business logic, skipping all the complex deployment issues at an early stage.
-
-## See in Action
-Deploying a Django Project in Production with Automatic Let's Encrypt HTTPS in Just 55 Seconds... 🏎️💨 ...🏁
-
-<a href="https://asciinema.org/a/632218" ><img width="939" alt="image" src="https://github.com/amerkurev/django-docker-template/assets/28217522/6409c517-e868-4baf-8be6-18bb0d59e5f7"></a>
-
-*[Star this project if it's what you were looking for!](https://github.com/amerkurev/django-docker-template) ⭐️*
 
 ## Technology stack
 The technology stack used includes:
@@ -26,8 +9,9 @@ The technology stack used includes:
 - [`Traefik`](https://traefik.io/traefik/) ver. 2.9
 - [`Caddy`](https://caddyserver.com) ver. 2.7 *(instead of Traefik if you wish)*
 - [`Docker`](https://docs.docker.com/get-docker/) and [`Docker Compose`](https://docs.docker.com/compose/)
+- MPTT
 
-Nothing extra, only the essentials! You can easily add everything else yourself by expanding the existing configuration files:
+configuration files:
 
 - [requirements.txt](https://github.com/amerkurev/django-docker-template/blob/master/requirements.txt)
 - [docker-compose.yml](https://github.com/amerkurev/django-docker-template/blob/master/docker-compose.yml)
@@ -36,8 +20,6 @@ Nothing extra, only the essentials! You can easily add everything else yourself 
 
 > This project includes a simple Django application from the official Django tutorial - ["a basic poll application"](https://docs.djangoproject.com/en/4.2/intro/tutorial01/).
 > You can safely delete this application at any time. This application is present in the project as an example, used for testing and debugging.
-
-So, what do you get by using this project as a template for your project? Let's take a look.
 
 ## Features
 - A well-configured Django project, with individual settings that can be changed using environment variables
@@ -231,11 +213,3 @@ MY_DOMAIN=your.domain.com docker compose -f docker-compose.caddy.yml up -d
 Choosing Caddy simplifies your setup by combining the functionalities of Traefik and Nginx into one. It's straightforward and takes care of HTTPS certificates for you automatically.
 Enjoy the ease of deployment with Caddy!
 
-## What's next?
-
-Now that you have a working project, you can extend it as you like, adding [dashboards for monitoring service health](https://doc.traefik.io/traefik/operations/dashboard/), [centralized log collection](https://www.fluentd.org), [secret storage](https://www.vaultproject.io), and of course, your own Django applications.
-All of this is beyond the scope of the current description, as the idea of this project is minimalism and providing only the essentials. Good luck!
-
-## License
-
-[MIT](https://github.com/amerkurev/django-docker-template/blob/master/LICENSE)
