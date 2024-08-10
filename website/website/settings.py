@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
-
 from pathlib import Path
 from website import is_true, split_with_comma
 
@@ -53,6 +52,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "setup.apps.SetupConfig",
     "polls.apps.PollsConfig",
+    'mptt',
+    "filetree.apps.FiletreeConfig",
 ]
 
 MIDDLEWARE = [
@@ -143,28 +144,26 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = os.getenv("DJANGO_MEDIA_ROOT", "")
-
-# URL that handles the media served from MEDIA_ROOT.
-# Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = os.getenv("DJANGO_MEDIA_URL", "media/")
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_ROOT = os.getenv("DJANGO_STATIC_ROOT")
-
-STATICFILES_DIRS = [BASE_DIR / "static"]
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
+DEFAULT_FILE_STORAGE = 'filetree.storage.AutoCreateFileTreeStorage'
 
 # Sessions
 SESSION_COOKIE_SECURE = is_true(os.getenv("DJANGO_SESSION_COOKIE_SECURE"))

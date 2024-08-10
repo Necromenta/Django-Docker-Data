@@ -1,0 +1,41 @@
+/* filetree/static/filetree/css/filetree.css */
+.file-tree ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.file-tree li {
+    margin: 5px 0;
+}
+
+.folder {
+    cursor: pointer;
+}
+
+.file {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.children {
+    display: none;
+}
+
+li.expanded > .children {
+    display: block;
+}
+
+.folder::before {
+    content: '📁';
+    margin-right: 5px;
+}
+
+.file::before {
+    content: '📄';
+    margin-right: 5px;
+}
+
+li.expanded > .folder::before {
+    content: '📂';
+}

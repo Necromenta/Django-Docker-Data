@@ -24,7 +24,10 @@ from django.conf import settings
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("polls/", include("polls.urls")),
+    path('filetree/', include('filetree.urls')),
+
 ]
 
 # Serve media files from MEDIA_ROOT. It will only work when DEBUG=True is set.
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

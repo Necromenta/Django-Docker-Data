@@ -1,0 +1,15 @@
+<!-- filetree/templates/filetree/file_tree_item.html -->
+<li>
+    {% if node.is_folder %}
+        <span class="folder" data-id="{{ node.id }}">{{ node.name }}</span>
+        {% if not node.is_leaf_node %}
+            <ul class="children">
+                {% for child in node.get_children %}
+                    {% include "filetree/file_tree_item.html" with node=child %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% else %}
+        <span class="file" data-id="{{ node.id }}">{{ node.name }}</span>
+    {% endif %}
+</li>
