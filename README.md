@@ -1,3 +1,9 @@
+## Features
+
+This project aims to create a data visualization tree for companies. our main objectives:
+- Provide a easy to understand dynamic-tree format for non-tech users
+- facilitate company data in the form of CSV, xlsx, presentations and visual reports
+- provide a 1-click button to generate information when needed
 
 ## Technology stack
 The technology stack used includes:
@@ -19,7 +25,7 @@ configuration files:
 - and others...
 
 > This project includes a simple Django application from the official Django tutorial - ["a basic poll application"](https://docs.djangoproject.com/en/4.2/intro/tutorial01/).
-> You can safely delete this application at any time. This application is present in the project as an example, used for testing and debugging.
+>This application is present in the project as an example, used for testing and debugging.
 
 ## Features
 - A well-configured Django project, with individual settings that can be changed using environment variables
@@ -82,37 +88,7 @@ docker run -it --rm -p 8000:8000 -v another_sqlite:/sqlite -v $(pwd)/website:/us
 ```console
 docker run --rm django-docker-template:master ./pytest.sh
 ```
-The [pytest.sh](https://github.com/amerkurev/django-docker-template/blob/master/website/pytest.sh) script runs tests using pytest and coverage. As a result, you will see an output like this in the terminal:
-```console
-================== test session starts =====================================
-platform linux -- Python 3.11.7, pytest-7.4.4, pluggy-1.3.0
-django: version: 4.2.9, settings: website.settings (from ini)
-rootdir: /usr/src/website
-configfile: pytest.ini
-plugins: django-4.7.0
-collected 10 items
-
-polls/tests.py .......... [100%]
-
-================== 10 passed in 0.19s ======================================
-Name                                       Stmts   Miss  Cover   Missing
-------------------------------------------------------------------------
-polls/__init__.py                              0      0   100%
-polls/admin.py                                12      0   100%
-polls/apps.py                                  4      0   100%
-polls/migrations/0001_initial.py               6      0   100%
-polls/migrations/0002_question_upload.py       4      0   100%
-polls/migrations/__init__.py                   0      0   100%
-polls/models.py                               20      2    90%   15, 33
-polls/tests.py                                57      0   100%
-polls/urls.py                                  4      0   100%
-polls/views.py                                28      8    71%   39-58
-website/__init__.py                            6      0   100%
-website/settings.py                           52      2    96%   94, 197
-website/urls.py                                6      0   100%
-------------------------------------------------------------------------
-TOTAL                                        199     12    94%
-```
+The [pytest.sh](https://github.com/amerkurev/django-docker-template/blob/master/website/pytest.sh) script runs tests using pytest and coverage.
 
 > If you don't want to use pytest (for some reason), you can run the tests without pytest using the command below:
 ```console
