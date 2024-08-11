@@ -156,7 +156,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# In settings.py
 
+# ... other settings ...
+
+LOGIN_REDIRECT_URL = '/'  # Redirect to home page (file tree) after login
+LOGIN_URL = '/login/'
+
+# ... rest of your settings ...
 
 
 # Default primary key field type

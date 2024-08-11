@@ -5,6 +5,14 @@ This project aims to create a data visualization tree for companies. our main ob
 - facilitate company data in the form of CSV, xlsx, presentations and visual reports
 - provide a 1-click button to generate information when needed
 
+## Important
+
+There are two ways to interact with the primitive file tree as for now
+1- from the admin panel
+2- accesing directly to http://localhost:8000/filetree/
+
+These two should be merged too by adding a way to access the filetree from the admin panel, or the separation of the admin page from the intended guest page
+
 ## Technology stack
 The technology stack used includes:
 

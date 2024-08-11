@@ -15,19 +15,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+# website/urls.py
 from django.contrib import admin
-from django.urls import include, path
-from django.conf.urls.static import static
+from django.urls import path, include
 from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.auth.decorators import login_required
+from filetree.views import file_tree_view
+from filetree.admin import filetree_admin_site
 
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("polls/", include("polls.urls")),
+    path('admin/', admin.site.urls),
+    path('', login_required(file_tree_view), name='home'),  # This line redirects root to file tree
     path('filetree/', include('filetree.urls')),
+    path('filetree-admin/', filetree_admin_site.urls),  # Add this line
 
 ]
 
-# Serve media files from MEDIA_ROOT. It will only work when DEBUG=True is set.
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
